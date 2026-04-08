@@ -91,6 +91,14 @@ public class StockDaily {
     @Column(name = "turnover", precision = 8, scale = 4)
     private BigDecimal turnover;
 
+    /** 数据状态（NORMAL/SUSPENDED/ADJUSTED/ABNORMAL） */
+    @Column(name = "data_status", length = 20)
+    private String dataStatus;
+
+    /** 复权价 */
+    @Column(name = "adj_price", precision = 10, scale = 3)
+    private BigDecimal adjPrice;
+
     /** 创建时间 */
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

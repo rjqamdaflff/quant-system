@@ -20,6 +20,8 @@ public interface StockDailyRepository extends JpaRepository<StockDaily, Long> {
 
     List<StockDaily> findByStockCodeOrderByTradeDateDesc(String stockCode);
 
+    List<StockDaily> findByStockCodeOrderByTradeDateAsc(String stockCode);
+
     List<StockDaily> findByStockCodeAndTradeDateBetween(
         String stockCode, LocalDate startDate, LocalDate endDate);
 
